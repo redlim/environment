@@ -1,0 +1,130 @@
+[
+  {
+    "codigo": 1,
+    "Magnitud": "Dióxido de Azufre",
+    "Abreviatura": "SO2",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 38,
+    "Técnica_medida": "Fluorescencia ultravioleta"
+  },
+  {
+    "codigo": 6,
+    "Magnitud": "Monóxido de Carbono",
+    "Abreviatura": "CO",
+    "Unidad_medida": "mg/m3",
+    "codigo_tecnica": 48,
+    "Técnica_medida": "Absorción infrarroja"
+  },
+  {
+    "codigo": 7,
+    "Magnitud": "Monóxido de Nitrógeno",
+    "Abreviatura": "NO",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 8,
+    "Técnica_medida": "Quimioluminiscencia"
+  },
+  {
+    "codigo": 8,
+    "Magnitud": "Dióxido de Nitrógeno",
+    "Abreviatura": "NO2",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 8,
+    "Técnica_medida": "Quimioluminiscencia"
+  },
+  {
+    "codigo": 9,
+    "Magnitud": "Partículas < 2.5 µm",
+    "Abreviatura": "PM2.5",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 47,
+    "Técnica_medida": "Microbalanza"
+  },
+  {
+    "codigo": 10,
+    "Magnitud": "Partículas < 10 µm",
+    "Abreviatura": "PM10",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 47,
+    "Técnica_medida": "Microbalanza"
+  },
+  {
+    "codigo": 12,
+    "Magnitud": "Óxidos de Nitrógeno",
+    "Abreviatura": "NOx",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 8,
+    "Técnica_medida": "Quimioluminiscencia"
+  },
+  {
+    "codigo": 14,
+    "Magnitud": "Ozono",
+    "Abreviatura": "O3",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 6,
+    "Técnica_medida": "Absorción ultravioleta"
+  },
+  {
+    "codigo": 20,
+    "Magnitud": "Tolueno",
+    "Abreviatura": "TOL",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 30,
+    "Magnitud": "Benceno",
+    "Abreviatura": "BEN",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 35,
+    "Magnitud": "Etilbenceno",
+    "Abreviatura": "EBE",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 37,
+    "Magnitud": "Metaxileno",
+    "Abreviatura": "MXY",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 38,
+    "Magnitud": "Paraxileno",
+    "Abreviatura": "PXY",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 39,
+    "Magnitud": "Ortoxileno",
+    "Abreviatura": "OXY",
+    "Unidad_medida": "µg/m3",
+    "codigo_tecnica": 59,
+    "Técnica_medida": "Cromatografía de gases"
+  },
+  {
+    "codigo": 42,
+    "Magnitud": "Hidrocarburos totales (hexano)",
+    "Abreviatura": "TCH",
+    "Unidad_medida": "mg/m3",
+    "codigo_tecnica": 2,
+    "Técnica_medida": "Ionización de llama"
+  },
+  {
+    "codigo": 44,
+    "Magnitud": "Hidrocarburos no metánicos (hexano)",
+    "Abreviatura": "NMHC",
+    "Unidad_medida": "mg/m3",
+    "codigo_tecnica": 2,
+    "Técnica_medida": "Ionización de llama"
+  }
+]
