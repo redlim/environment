@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "codigo": 28079001,
+    "codigo": "28079001",
     "comentario": "'Baja.- 04/05/2009 (14:00 h.)'",
     "nombre": "'Pº. Recoletos'",
     "fecha_alta": "",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "codigo": 28079002,
+    "codigo": "28079002",
     "comentario": "' Baja.- 04/12/2006 (11:00 h.)'",
     "nombre": "'Glta. de Carlos V'",
     "fecha_alta": "",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "codigo": 28079003,
+    "codigo": "28079003",
     "comentario": "'undefined'",
     "nombre": "'Pza. del Carmen'",
     "fecha_alta": "",
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "codigo": 28079035,
+    "codigo": "28079035",
     "comentario": "' * Código desde enero 2011'",
     "nombre": "'Pza. del Carmen'",
     "fecha_alta": "",
@@ -45,7 +45,7 @@
   },
   {
     "id": 5,
-    "codigo": 28079004,
+    "codigo": "28079004",
     "comentario": "'undefined'",
     "nombre": "'Pza. de España'",
     "fecha_alta": "",
@@ -56,7 +56,7 @@
   },
   {
     "id": 6,
-    "codigo": 28079005,
+    "codigo": "28079005",
     "comentario": "'undefined'",
     "nombre": "'Barrio del Pilar'",
     "fecha_alta": "",
@@ -67,7 +67,7 @@
   },
   {
     "id": 7,
-    "codigo": 28079039,
+    "codigo": "28079039",
     "comentario": "'  * Código desde enero 2011'",
     "nombre": "'Barrio del Pilar'",
     "fecha_alta": "",
@@ -78,7 +78,7 @@
   },
   {
     "id": 8,
-    "codigo": 28079006,
+    "codigo": "28079006",
     "comentario": "' Baja.- 27/11/2009 (08:00 h.)'",
     "nombre": "'Pza. Dr. Marañón'",
     "fecha_alta": "",
@@ -89,7 +89,7 @@
   },
   {
     "id": 9,
-    "codigo": 28079007,
+    "codigo": "28079007",
     "comentario": "' Baja.- 30/12/2009 (14:00 h.)'",
     "nombre": "'Pza. M. de Salamanca'",
     "fecha_alta": "",
@@ -100,7 +100,7 @@
   },
   {
     "id": 10,
-    "codigo": 28079008,
+    "codigo": "28079008",
     "comentario": "'undefined'",
     "nombre": "'Escuelas Aguirre'",
     "fecha_alta": "",
@@ -111,7 +111,7 @@
   },
   {
     "id": 11,
-    "codigo": 28079009,
+    "codigo": "28079009",
     "comentario": "'undefined'",
     "nombre": "'Pza. Luca de Tena Baja.- 07/12/2009 (08:00 h.)'",
     "fecha_alta": "",
@@ -122,7 +122,7 @@
   },
   {
     "id": 12,
-    "codigo": 28079010,
+    "codigo": "28079010",
     "comentario": "'undefined'",
     "nombre": "'Cuatro Caminos'",
     "fecha_alta": "",
@@ -133,7 +133,7 @@
   },
   {
     "id": 13,
-    "codigo": 28079038,
+    "codigo": "28079038",
     "comentario": "'* Código desde enero 2011'",
     "nombre": "'Cuatro Caminos '",
     "fecha_alta": "",
@@ -144,7 +144,7 @@
   },
   {
     "id": 14,
-    "codigo": 28079011,
+    "codigo": "28079011",
     "comentario": "'undefined'",
     "nombre": "'Av. Ramón y Cajal'",
     "fecha_alta": "",
@@ -155,7 +155,7 @@
   },
   {
     "id": 15,
-    "codigo": 28079012,
+    "codigo": "28079012",
     "comentario": "' Baja.- 30/12/2009 (14:00 h.)'",
     "nombre": "'Pza. Manuel Becerra'",
     "fecha_alta": "",
@@ -166,7 +166,7 @@
   },
   {
     "id": 16,
-    "codigo": 28079013,
+    "codigo": "28079013",
     "comentario": "'undefined'",
     "nombre": "'Vallecas'",
     "fecha_alta": "",
@@ -177,7 +177,7 @@
   },
   {
     "id": 17,
-    "codigo": 28079040,
+    "codigo": "28079040",
     "comentario": "' * Código desde enero 2011'",
     "nombre": "'Vallecas'",
     "fecha_alta": "",
@@ -188,7 +188,7 @@
   },
   {
     "id": 18,
-    "codigo": 28079014,
+    "codigo": "28079014",
     "comentario": "' Baja.- 02/12/2009 (09:00 h.)'",
     "nombre": "'Pza. Fdez. Ladreda'",
     "fecha_alta": "",
@@ -199,7 +199,7 @@
   },
   {
     "id": 19,
-    "codigo": 28079015,
+    "codigo": "28079015",
     "comentario": "' Baja.- 17/10/2008 (11:00 h.)'",
     "nombre": "'Pza. Castilla'",
     "fecha_alta": "",
@@ -210,7 +210,7 @@
   },
   {
     "id": 20,
-    "codigo": 28079016,
+    "codigo": "28079016",
     "comentario": "'undefined'",
     "nombre": "'Arturo Soria'",
     "fecha_alta": "",
@@ -221,7 +221,7 @@
   },
   {
     "id": 21,
-    "codigo": 28079017,
+    "codigo": "28079017",
     "comentario": "'undefined'",
     "nombre": "'Villaverde Alto'",
     "fecha_alta": "",
@@ -232,7 +232,7 @@
   },
   {
     "id": 22,
-    "codigo": 28079018,
+    "codigo": "28079018",
     "comentario": "'undefined'",
     "nombre": "'C/ Farolillo'",
     "fecha_alta": "",
@@ -243,7 +243,7 @@
   },
   {
     "id": 23,
-    "codigo": 28079019,
+    "codigo": "28079019",
     "comentario": "' Baja.- 30/12/2009 (13:00 h.)'",
     "nombre": "'Huerta Castañeda'",
     "fecha_alta": "",
@@ -254,7 +254,7 @@
   },
   {
     "id": 24,
-    "codigo": 28079020,
+    "codigo": "28079020",
     "comentario": "'undefined'",
     "nombre": "'Moratalaz'",
     "fecha_alta": "",
@@ -265,7 +265,7 @@
   },
   {
     "id": 25,
-    "codigo": 28079036,
+    "codigo": "28079036",
     "comentario": "'undefined'",
     "nombre": "'Moratalaz * Código desde enero 2011'",
     "fecha_alta": "",
@@ -276,7 +276,7 @@
   },
   {
     "id": 26,
-    "codigo": 28079021,
+    "codigo": "28079021",
     "comentario": "' Baja.- 04/12/2009 (14:00 h.)'",
     "nombre": "'Pza. Cristo Rey'",
     "fecha_alta": "",
@@ -287,7 +287,7 @@
   },
   {
     "id": 27,
-    "codigo": 28079022,
+    "codigo": "28079022",
     "comentario": "' Baja.- 20/11/2009 (10:00 h.)'",
     "nombre": "'Pº. Pontones'",
     "fecha_alta": "",
@@ -298,7 +298,7 @@
   },
   {
     "id": 28,
-    "codigo": 28079023,
+    "codigo": "28079023",
     "comentario": "' Baja.- 30/12/2009 (14:00 h.)'",
     "nombre": "'Final C/ Alcalá'",
     "fecha_alta": "",
@@ -309,7 +309,7 @@
   },
   {
     "id": 29,
-    "codigo": 28079024,
+    "codigo": "28079024",
     "comentario": "'undefined'",
     "nombre": "'Casa de Campo'",
     "fecha_alta": "",
@@ -320,7 +320,7 @@
   },
   {
     "id": 30,
-    "codigo": 28079025,
+    "codigo": "28079025",
     "comentario": "' Baja.- 16/11/2009 (10:00 h.)'",
     "nombre": "'Santa Eugenia'",
     "fecha_alta": "",
@@ -331,7 +331,7 @@
   },
   {
     "id": 31,
-    "codigo": 28079026,
+    "codigo": "28079026",
     "comentario": "' Baja.- 11/01/2010 (09:00 h.)'",
     "nombre": "'Urb. Embajada (Barajas'",
     "fecha_alta": "",
@@ -342,7 +342,7 @@
   },
   {
     "id": 32,
-    "codigo": 28079027,
+    "codigo": "28079027",
     "comentario": "'undefined'",
     "nombre": "'Barajas'",
     "fecha_alta": "",
@@ -353,7 +353,7 @@
   },
   {
     "id": 33,
-    "codigo": 28079047,
+    "codigo": "28079047",
     "comentario": "' Alta.- 21/12/2009 (00:00 h.)'",
     "nombre": "'Méndez Álvaro'",
     "fecha_alta": "",
@@ -364,7 +364,7 @@
   },
   {
     "id": 34,
-    "codigo": 28079048,
+    "codigo": "28079048",
     "comentario": "' Alta.- 01/06/2010 (00:00 h.)'",
     "nombre": "'Pº. Castellana'",
     "fecha_alta": "",
@@ -375,7 +375,7 @@
   },
   {
     "id": 35,
-    "codigo": 28079049,
+    "codigo": "28079049",
     "comentario": "' Alta.- 01/01/2010 (00:00 h.)'",
     "nombre": "'Retiro'",
     "fecha_alta": "",
@@ -386,7 +386,7 @@
   },
   {
     "id": 36,
-    "codigo": 28079050,
+    "codigo": "28079050",
     "comentario": "' Alta.- 08/02/2010 (00:00 h.)'",
     "nombre": "'Pza. Castilla'",
     "fecha_alta": "",
@@ -397,7 +397,7 @@
   },
   {
     "id": 37,
-    "codigo": 28079054,
+    "codigo": "28079054",
     "comentario": "' Alta.- 11/12/2009 (00:00 h.)'",
     "nombre": "'Ensanche Vallecas'",
     "fecha_alta": "",
@@ -408,7 +408,7 @@
   },
   {
     "id": 38,
-    "codigo": 28079055,
+    "codigo": "28079055",
     "comentario": "' Alta.- 20/01/2010 (15:00 h.)'",
     "nombre": "'Urb. Embajada (Barajas'",
     "fecha_alta": "",
@@ -419,7 +419,7 @@
   },
   {
     "id": 39,
-    "codigo": 28079056,
+    "codigo": "28079056",
     "comentario": "' Alta.- 18/01/2010 (12:00 h.)'",
     "nombre": "'Pza. Fdez. Ladreda'",
     "fecha_alta": "",
@@ -430,7 +430,7 @@
   },
   {
     "id": 40,
-    "codigo": 28079057,
+    "codigo": "28079057",
     "comentario": "' Alta.- 24/11/2009 (00:00 h.)'",
     "nombre": "'Sanchinarro'",
     "fecha_alta": "",
@@ -441,7 +441,7 @@
   },
   {
     "id": 41,
-    "codigo": 28079058,
+    "codigo": "28079058",
     "comentario": "' Alta.- 30/11/2009 (13:00 h.)'",
     "nombre": "'El Pardo'",
     "fecha_alta": "",
@@ -452,7 +452,7 @@
   },
   {
     "id": 42,
-    "codigo": 28079059,
+    "codigo": "28079059",
     "comentario": "' Alta.- 14/12/2009 (00:00 h.)'",
     "nombre": "'Parque Juan Carlos I'",
     "fecha_alta": "",
@@ -463,7 +463,7 @@
   },
   {
     "id": 43,
-    "codigo": 28079086,
+    "codigo": "28079086",
     "comentario": "'undefined'",
     "nombre": "'Tres Olivos'",
     "fecha_alta": "",
@@ -474,7 +474,7 @@
   },
   {
     "id": 44,
-    "codigo": 28079060,
+    "codigo": "28079060",
     "comentario": "' Alta.- 14/01/2010 (13:00 h.)'",
     "nombre": "'Tres Olivos'",
     "fecha_alta": "",
@@ -485,7 +485,7 @@
   },
   {
     "id": 45,
-    "codigo": 28079099,
+    "codigo": "28079099",
     "comentario": "'undefined'",
     "nombre": "' RED.- Media de todas las estaciones'",
     "fecha_alta": "",

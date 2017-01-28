@@ -45,15 +45,19 @@ function saveData(data) {
         let stations = yield db.collection('stations').find({}).toArray();
         let parameters = yield db.collection('parameters').find({}).toArray();
 
-        var result = [];
+        let result = [];
         for( let d of dataToSave){
-            var cookData = {};
+            let cookData = {};
             let nameStation = d.station;
-            var station = yield stations.find((s) => s.codigo.toString() === nameStation );
-            var parameter = yield parameters.find((p) => p.codigo.toString() === d.parameter);
-
+            let station = stations.find((s) => s.codigo.toString() === nameStation );
+            let parameter = parameters.find((p) => p.codigo === parseInt(d.parameter));
+            cookData.station = station;
+            cookData.parameter = parameter;
+            cookData.value = d;
+            result.push(cookData);
         }
-
+        let save = yield db.collection('madrid-results').insertMany(result);
+        console.log(save);
         db.close();
 
     }).catch(function (err) {
@@ -91,7 +95,7 @@ function parserData(data){
        data.date = new Date(parseInt(d.anio),parseInt(d.mes),parseInt(d.dia),0,0,0);
        data.values = [];
        data.parameter = d.parametros;
-       for(var i = 0; i<24;i++){
+       for(var i = 0; i<=23;i++){
            if(d['v'+i] === 'V') {
                var value = {};
                value.value = d['h' + i];
