@@ -3,11 +3,13 @@ const co = require('co');
 const CronJob = require('cron').CronJob;
 const request = require('request');
 const mongoClient = require('mongodb').MongoClient;
+const parameters = require('../migrations/parameters.json');
+const stations = require('../migrations/stations.json');
 
 var environment = {};
 
 environment.run = function () {
-    // new CronJob('0 10 * * * *', function() {
+    new CronJob('1 * * * * *', function() {
        environment.calculation(function(err,res){
             if(!err){
                 console.log("todo ok");
@@ -16,7 +18,7 @@ environment.run = function () {
                 console.error("error, que pasa?", err);
             }
     });
-    // }, null, true, 'Europe/Madrid');
+    }, null, true, 'Europe/Madrid');
 
 };
 
@@ -42,22 +44,20 @@ function saveData(data) {
         const db = yield mongoClient.connect(url);
         console.log("Connected correctly to server");
 
-        let stations = yield db.collection('stations').find({}).toArray();
-        let parameters = yield db.collection('parameters').find({}).toArray();
-
         let result = [];
         for( let d of dataToSave){
-            let cookData = {};
-            let nameStation = d.station;
-            let station = stations.find((s) => s.codigo.toString() === nameStation );
-            let parameter = parameters.find((p) => p.codigo === parseInt(d.parameter));
-            cookData.station = station;
-            cookData.parameter = parameter;
-            cookData.value = d;
-            result.push(cookData);
+            let station = searchInObject(stations,"codigo",d.station);
+            let parameter = searchInObject(parameters,"code",d.parameter);
+            d.sationName = station.nombre;
+            d.stationCoordinates = [station.latitud,station.longitud]; // la altitud la obviamos de momento
+            d.parameterName = parameter.measure;
+            d.parameterShortName = parameter.formula;
+            d.parameterUnit = parameter.unit;
+            result.push(d);
         }
+        let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date})
+        console.log(deleteLast);
         let save = yield db.collection('madrid-results').insertMany(result);
-        console.log(save);
         db.close();
 
     }).catch(function (err) {
@@ -92,14 +92,14 @@ function parserData(data){
      return result.reduce(function (acum,d) {
        var data = {};
        data.station = d.estacion1 + d.estacion2 + d.estacion3;
-       data.date = new Date(parseInt(d.anio),parseInt(d.mes),parseInt(d.dia),0,0,0);
+       data.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),1,0,0);
        data.values = [];
        data.parameter = d.parametros;
        for(var i = 0; i<=23;i++){
            if(d['v'+i] === 'V') {
                var value = {};
                value.value = d['h' + i];
-               value.date = new Date(parseInt(d.anio),parseInt(d.mes),parseInt(d.dia),i,0,0);
+               value.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),i+1,0,0);
                data.values.push(value);
            }
        }
@@ -107,6 +107,15 @@ function parserData(data){
        return acum;
 
     },[]);
+}
+
+function searchInObject(object,property,value){
+
+    for(let i = 0;i<object.length;i++){
+        if(object[i][property] === value)
+            return object[i];
+    }
+    return [];
 }
 
 module.exports = environment;
