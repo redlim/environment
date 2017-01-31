@@ -9,7 +9,7 @@ const stations = require('../migrations/stations.json');
 var environment = {};
 
 environment.run = function () {
-    new CronJob('1 * * * * *', function() {
+    new CronJob('0 5 * * * *', function() {
        environment.calculation(function(err,res){
             if(!err){
                 console.log("todo ok");
@@ -34,12 +34,29 @@ environment.calculation = function (callback) {
     });
 };
 
+environment.getData = function (date,callback) {
+    co(function* () {
+
+        const url = 'mongodb://localhost:27017/environment';
+        const db = yield mongoClient.connect(url);
+        var queryDate = new Date(date);
+        console.log(queryDate);
+        let save = yield db.collection('madrid-results').find({date:queryDate}).toArray();
+        callback(null,save);
+        db.close();
+
+    }).catch(function (err) {
+        callback(err);
+        console.error(err);
+    });
+};
+
+
 function saveData(data) {
     var dataToSave = parserData(data);
 
 
     co(function* () {
-
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
         console.log("Connected correctly to server");
@@ -56,7 +73,6 @@ function saveData(data) {
             result.push(d);
         }
         let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date})
-        console.log(deleteLast);
         let save = yield db.collection('madrid-results').insertMany(result);
         db.close();
 
@@ -92,14 +108,14 @@ function parserData(data){
      return result.reduce(function (acum,d) {
        var data = {};
        data.station = d.estacion1 + d.estacion2 + d.estacion3;
-       data.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),1,0,0);
+       data.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),0,0,0);
        data.values = [];
        data.parameter = d.parametros;
        for(var i = 0; i<=23;i++){
            if(d['v'+i] === 'V') {
                var value = {};
                value.value = d['h' + i];
-               value.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),i+1,0,0);
+               value.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),i,0,0);
                data.values.push(value);
            }
        }
