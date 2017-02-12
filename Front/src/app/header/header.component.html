@@ -1,0 +1,32 @@
+<!--<header>-->
+  <!--<nav class="nav-container">-->
+    <!--<ul>-->
+      <!--<li class="nav-option" *ngFor="let option of options;">-->
+        <!--<a href="{{option.url}}" (click)="activeOption(option)" [class.active]="option.active">{{option.title}}</a>-->
+      <!--</li>-->
+    <!--</ul>-->
+  <!--</nav>-->
+<!--</header>-->
+<div class="demo-container demo-layout-transparent">
+  <mdl-layout #mdlLayout1="mdlLayout">
+    <mdl-layout-header mdl-layout-header-transparent>
+      <mdl-layout-header-row>
+        <mdl-layout-title>DDatos</mdl-layout-title>
+        <mdl-layout-spacer></mdl-layout-spacer>
+        <nav class="mdl-navigation">
+          <a *ngFor="let option of options;" class="mdl-navigation__link" [routerLink]="[option.url]">{{option.title}}</a>
+        </nav>
+      </mdl-layout-header-row>
+    </mdl-layout-header>
+    <mdl-layout-drawer>
+      <mdl-layout-title>DDatos</mdl-layout-title>
+      <nav class="mdl-navigation">
+        <a *ngFor="let option of options;" class="mdl-navigation__link" [routerLink]="[option.url]">{{option.title}}</a>
+      </nav>
+    </mdl-layout-drawer>
+    <mdl-layout-content>
+      <router-outlet></router-outlet>
+    </mdl-layout-content>
+  </mdl-layout>
+</div>
+<button mdl-button (click)="mdlLayout1.toggleDrawer()" mdl-button-type="raised" mdl-colored="primary">Toggle Drawer</button>
