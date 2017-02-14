@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
+import {ItemService} from './services/service.component'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,7 +34,7 @@ import {routing} from "./app.routing";
       apiKey: 'AIzaSyDCj1jfd3UZRLxXQoxY66bNoePod9XYk0A'
     })
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
