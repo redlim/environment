@@ -12,10 +12,11 @@ environment.run = function () {
     new CronJob('0 5 * * * *', function() {
        environment.calculation(function(err,res){
             if(!err){
-                console.log("todo ok");
+                console.log("Datos correctamente guardados a las "+ new Date());
             }
             else {
-                console.error("error, que pasa?", err);
+                console.log("Error al guardar los datos "+ new Date());
+                console.error(err);
             }
     });
     }, null, true, 'Europe/Madrid');
@@ -26,9 +27,11 @@ environment.calculation = function (callback) {
 
     request('http://www.mambiente.munimadrid.es/opendata/horario.txt', function (error, response, body) {
         if (!error && response.statusCode === 200) {
+            console.log("Connected correctly to the Madrid Ambiente Service "+ new Date());
             saveData(body);
         }
         else {
+            console.log("Error with connection to Madrid Ambiente Service "+ new Date());
             console.error(error);
         }
     });
@@ -36,7 +39,7 @@ environment.calculation = function (callback) {
 
 environment.getData = function (date,callback) {
     co(function* () {
-
+        console.log("Petition of data  "+ new Date());
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
         var queryDate = new Date(date);
@@ -59,7 +62,7 @@ function saveData(data) {
     co(function* () {
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
-        console.log("Connected correctly to server");
+        console.log("Connected correctly to Database "+ new Date());
 
         let result = [];
         for( let d of dataToSave){
@@ -74,6 +77,7 @@ function saveData(data) {
         }
         let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date})
         let save = yield db.collection('madrid-results').insertMany(result);
+        console.log("Save data correctly "+ new Date());
         db.close();
 
     }).catch(function (err) {
