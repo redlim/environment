@@ -9,7 +9,7 @@ const stations = require('../migrations/stations.json');
 var environment = {};
 
 environment.run = function () {
-    new CronJob('0 10 * * * *', function() {
+    new CronJob('0 5 * * * *', function() {
        environment.calculation(function(err,res){
             if(!err){
                 console.log("Datos correctamente guardados a las "+ new Date());
