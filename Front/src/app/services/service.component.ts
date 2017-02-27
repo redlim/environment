@@ -7,11 +7,11 @@ export class ItemService{
 
   constructor(private http:Http){}
 
-  private url = "http://127.0.0.1:4000/data?date='2017-12-02'";
+  private url = "http://127.0.0.1:4000/data?date='2017-02-12'";
 
   getItems(){
     return this.http.get(this.url).map(
-      response => response
+      response => response.json()
     )
   }
 

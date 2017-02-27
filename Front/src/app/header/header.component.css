@@ -4,6 +4,6 @@
 }
 .demo-container{
   width: 100%;
-  position: relative;
-  height: 300px;
+  /*position: relative;*/
+  height: 500px;
 }

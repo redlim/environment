@@ -20,16 +20,29 @@ export class MapComponent {
 
   constructor(private service :ItemService){}
 
+  private items;
   ngOnInit() {
-    this.service.getItems().subscribe((items)=>console.log(items));
+    this.service.getItems().subscribe((items)=> this.updateItems(items));
   }
 
   // google maps zoom level
-  zoom: number = 8;
+  zoom: number = 12;
 
   // initial center position for the map
-  lat: number = 51.673858;
-  lng: number = 7.815982;
+  lat: number = 40.411335;
+  lng: number =  -3.674908;
+  private updateItems(items){
+    this.items = items;
+
+    for (let item of items){
+      console.log(item);
+      this.markers.push({
+        label:item.stationName,
+        lat: item.stationCoordinates[0],
+        lng: item.stationCoordinates[1]
+      });
+    }
+  }
 
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`)
