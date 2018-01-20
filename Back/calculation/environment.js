@@ -9,7 +9,7 @@ const stations = require('../migrations/stations.json');
 var environment = {};
 
 environment.run = function () {
-    new CronJob('0 5 * * * *', function() {
+    new CronJob('0 15 * * * *', function() {
        environment.calculation(function(err,res){
             if(!err){
                 console.log("Datos correctamente guardados a las "+ new Date());
@@ -42,13 +42,13 @@ environment.getData = function (date,callback) {
         console.log("Petition of data  "+ new Date());
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
-        var queryDate = new Date(date);
-        console.log(queryDate);
+        let queryDate = new Date(date);
+        console.log("hola",queryDate);
         let save = yield db.collection('madrid-results').find({date:queryDate}).toArray();
         callback(null,save);
         db.close();
 
-    }).catch(function (err) {
+    }).catch((err)=> {
         callback(err);
         console.error(err);
     });
@@ -57,8 +57,6 @@ environment.getData = function (date,callback) {
 
 function saveData(data) {
     var dataToSave = parserData(data);
-
-
     co(function* () {
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
@@ -75,12 +73,12 @@ function saveData(data) {
             d.parameterUnit = parameter.unit;
             result.push(d);
         }
-        let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date})
+        let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date.toISOString()});
         let save = yield db.collection('madrid-results').insertMany(result);
         console.log("Save data correctly "+ new Date());
         db.close();
 
-    }).catch(function (err) {
+    }).catch((err)=> {
         console.error(err);
     });
 
@@ -112,20 +110,19 @@ function parserData(data){
      return result.reduce(function (acum,d) {
        var data = {};
        data.station = d.estacion1 + d.estacion2 + d.estacion3;
-       data.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),0,0,0);
+       data.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),1,0,0);
        data.values = [];
        data.parameter = d.parametros;
        for(var i = 0; i<=23;i++){
            if(d['v'+i] === 'V') {
                var value = {};
                value.value = d['h' + i];
-               value.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),i,0,0);
+               value.date = new Date(parseInt(d.anio),parseInt(d.mes)-1,parseInt(d.dia),i+1,0,0);
                data.values.push(value);
            }
        }
        acum.push(data);
        return acum;
-
     },[]);
 }
 
