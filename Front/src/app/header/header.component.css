@@ -1,9 +1,0 @@
-.demo-layout-transparent{
-  background: url(./../../assets/img/background.jpg) center / cover;
-  color: white;
-}
-.demo-container{
-  width: 100%;
-  /*position: relative;*/
-  height: 500px;
-}
