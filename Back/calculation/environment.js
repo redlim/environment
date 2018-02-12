@@ -42,12 +42,15 @@ environment.getData = function (date,callback) {
         console.log("Petition of data  "+ new Date());
         const url = 'mongodb://localhost:27017/environment';
         const db = yield mongoClient.connect(url);
-        let queryDate = new Date(date);
+        let queryDate = date === 'today' ? new Date(): new Date(date) ;
+        queryDate.setHours(0);
+        queryDate.setMinutes(0);
+        queryDate.setSeconds(0);
+        queryDate.setMilliseconds(0);
         console.log("hola",queryDate);
         let save = yield db.collection('madrid-results').find({date:queryDate}).toArray();
         callback(null,save);
         db.close();
-
     }).catch((err)=> {
         callback(err);
         console.error(err);

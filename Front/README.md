@@ -1,6 +1,6 @@
-# enviroment
+# environment
 
-> Contaminación en Madrid
+> A Side project to study the contamination meassurements of Madrid
 
 ## Build Setup
 

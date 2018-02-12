@@ -1,7 +1,20 @@
 <template>
-  <div class="map-container">
-    <h1>{{ msg }}</h1>
-    <div id="map"></div>
+  <div class="hello">
+    <gmap-map
+      :center="center"
+      :zoom="9"
+      map-type-id="terrain"
+      style="width: 500px; height: 300px"
+    >
+      <gmap-marker
+        :key="index"
+        v-for="(m, index) in markers"
+        :position="m.position"
+        :clickable="true"
+        :draggable="true"
+        @click="center=m.position"
+      ></gmap-marker>
+    </gmap-map>
   </div>
 </template>
 
@@ -10,29 +23,29 @@
     name: 'AwMap',
     data () {
       return {
-        msg: 'this is enviroment!'
+        madridData:[],
+        msg: 'This is Enviroment!',
+        center: {lat: 40.416775, lng: -3.703790},
+        markers: []
       }
     },
-    mounted (){
-      var map = L.map('map').setView([51.505, -0.09], 13);
+    mounted(){
+      this.$http.get('http://localhost:5000/data').then(response => {
 
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+        // get body data
+        this.madridData = response.body;
+        this.madridData.forEach((d)=>{
+          console.log(d.stationCoordinates[0]);
+          this.markers.push({position:{lat:parseFloat(d.stationCoordinates[0]),lng:parseFloat(d.stationCoordinates[1])}});
+        });
 
-      L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+      }, response => {
+        // error callback
+      });
     }
   }
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .map-container{
-    height: 100%;
-  }
-  #map{
-  height: 100%;
-  width: 100%;
-  }
 </style>

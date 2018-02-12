@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/data', function(req, res, next) {
 
-  enviroment.getData(req.query.date,function (err,data) {
+  enviroment.getData(req.query.date || 'today',function (err,data) {
       if(!err)
         res.send(data);
       else
