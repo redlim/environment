@@ -17,8 +17,8 @@ export default class Board extends Component {
 		}
 	}
 	renderSquare(i){
-		return <Square value={this.state.squares[i]}
-		               onClick={() => this.handleClick(i)}/>;
+		return <Square value={this.props.squares[i]}
+		               onClick={() => this.props.onClick(i)}/>;
 	}
 	handleClick(i){
 		const squares = this.state.squares.slice();
@@ -32,6 +32,7 @@ export default class Board extends Component {
 		});
 	}
 	render(){
+
 		const winner = calculateWinner(this.state.squares);
 		let status;
 		if (winner) {
