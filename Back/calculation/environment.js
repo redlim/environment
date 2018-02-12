@@ -75,7 +75,7 @@ function saveData(data) {
             d.parameterUnit = parameter.unit;
             result.push(d);
         }
-        let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date})
+        let deleteLast = yield  db.collection('madrid-results').deleteMany({date:dataToSave[0].date});
         let save = yield db.collection('madrid-results').insertMany(result);
         console.log("Save data correctly "+ new Date());
         db.close();
